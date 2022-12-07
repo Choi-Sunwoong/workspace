@@ -6,31 +6,31 @@ public class ScanerExample1 {
 
 	public static void main(String[] args) {
 		
-		// Scanner : í”„ë¡œê·¸ë¨ ì‹¤í–‰ ì¤‘ í‚¤ë³´ë“œ ì…ë ¥ì„ ë°›ì„ ìˆ˜ ìˆê²Œ í•˜ëŠ” ì—­í• 
+		// Scanner : ÇÁ·Î±×·¥ ½ÇÇà Áß Å°º¸µå ÀÔ·ÂÀ» ¹ŞÀ» ¼ö ÀÖ°Ô ÇÏ´Â ¿ªÇÒ
 		
-		// Scanner ìƒì„±
-		// -> í”„ë¡œê·¸ë¨ ì•ˆì— ìŠ¤ìºë„ˆë¼ëŠ” ê¸°ê³„ë¥¼ ë§Œë“  ê²ƒ
+		// Scanner »ı¼º
+		// -> ÇÁ·Î±×·¥ ¾È¿¡ ½ºÄ³³Ê¶ó´Â ±â°è¸¦ ¸¸µç °Í
 		Scanner sc = new Scanner(System.in);
-		//	importë¥¼ ì•ˆí•´ì™€ì„œ
-		//	Scannerë¥¼ ë§Œë“¤ì–´ì„œ ì“°ê³  ì‹¶ì€ë° ì„¤ê³„ë„ê°€ ì—†ìŒ
-		// import í•´ì˜¤ë¼ëŠ” ì—ëŸ¬ ë°œìƒ! ==> import í•´ì˜¤ë©´ ì˜¤ë¥˜ í•´ê²°
-		//System.out.print("ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
-		//int input1 = sc.nextInt();// ì…ë ¥ ë°›ì€ ì •ìˆ˜ë¥¼ input1ì— ëŒ€ì…
-		// nextInt() : ë‹¤ìŒ ì…ë ¥ëœ ì •ìˆ˜ë¥¼ ì½ì–´ì˜´ (í‚¤ë³´ë“œë¡œ ì…ë ¥ëœ ì •ìˆ˜ë¥¼ ì½ì–´ì˜´)
+		//	import¸¦ ¾ÈÇØ¿Í¼­
+		//	Scanner¸¦ ¸¸µé¾î¼­ ¾²°í ½ÍÀºµ¥ ¼³°èµµ°¡ ¾øÀ½
+		// import ÇØ¿À¶ó´Â ¿¡·¯ ¹ß»ı! ==> import ÇØ¿À¸é ¿À·ù ÇØ°á
+		//System.out.print("°ªÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+		//int input1 = sc.nextInt();// ÀÔ·Â ¹ŞÀº Á¤¼ö¸¦ input1¿¡ ´ëÀÔ
+		// nextInt() : ´ÙÀ½ ÀÔ·ÂµÈ Á¤¼ö¸¦ ÀĞ¾î¿È (Å°º¸µå·Î ÀÔ·ÂµÈ Á¤¼ö¸¦ ÀĞ¾î¿È)
 		//System.out.println(input1);
 		
 		
-		//System.out.print("ì‹¤ìˆ˜ë§Œ ì…ë ¥í•´:");
+		//System.out.print("½Ç¼ö¸¸ ÀÔ·ÂÇØ:");
 		//double input2 = sc.nextDouble();
 		//System.out.println(input2);
 		
-		// ì•ˆë…•? ë°˜ê°€ì›Œ! ë°¥ë¨¹ìœ¼ë˜?
-		System.out.print("ì…ë ¥1: ");
+		// ¾È³ç? ¹İ°¡¿ö! ¹ä¸ÔÀ¸·¡?
+		System.out.print("ÀÔ·Â1: ");
 		String input3 = sc.nextLine();
-		// next() : ë‹¤ìŒ ì…ë ¥ëœ í•œ ë‹¨ì–´ë¥¼ ì½ì–´ì˜´
+		// next() : ´ÙÀ½ ÀÔ·ÂµÈ ÇÑ ´Ü¾î¸¦ ÀĞ¾î¿È
 		System.out.println(input3);
 		
-		System.out.print("ì…ë ¥2: ");
+		System.out.print("ÀÔ·Â2: ");
 		String input4 = input3 + sc.next();
 		System.out.println(input4);
 	}
