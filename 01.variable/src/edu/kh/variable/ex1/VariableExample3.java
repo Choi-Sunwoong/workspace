@@ -19,7 +19,7 @@ public class VariableExample3 {
 		// 작은 자료형 -> 큰 자료형으로
 		// 컴파일러에 의해 자동적으로 변환되는 것
 	
-		int num = 10;
+		int num1 = 10;
 		double num2 = 3.5;
 		
 		System.out.println(num1 + num2);
@@ -45,6 +45,6 @@ public class VariableExample3 {
 		
 		char ch1 = '각';
 		int i4 =ch1;
-		System.out.pritnln(i4 + ch);
+		System.out.println(i4 + ch);
 	}	
 }
