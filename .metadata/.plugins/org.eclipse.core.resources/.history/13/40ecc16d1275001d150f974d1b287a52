@@ -1,0 +1,15 @@
+package edu.kh.variable.ex1;
+
+public class VariableExample1 {
+	public static void main(String[] args) {
+		// 메인메소드 : 꼭 있어야 실행가능!!
+		
+		// notice ! 문장끝에 ;(세미콜론) 찍어줘야 문장의 끝이라고 인식함.
+		// 명령어 끝에 ; 없으면 에러
+		System.out.println(2 * 3.141592653589793 * 10);
+		System.out.println(3.141592653589793 * 10 * 10);
+		System.out.println(3.141592653589793 * 10 * 10 * 20);
+		System.out.println(4 * 3.141592653589793 * 10 * 10);
+	}
+
+}
