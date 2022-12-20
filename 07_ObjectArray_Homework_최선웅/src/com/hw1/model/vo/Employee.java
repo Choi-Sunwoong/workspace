@@ -14,18 +14,21 @@ public class Employee {
 	private String phone;//전화번호
 	private String address;//주소
 	
+	
+	public Employee() {}
 
-	private Employee[] employeeArr = new Employee[3];
-	
-	
-	public Employee() { // 기본생성자
-	
-		employeeArr[0] = new Employee();
-		employeeArr[1] = new Employee();
-		employeeArr[2] = new Employee();
-		
+
+	public Employee(int empNo, String empName, int age, char gender,
+			 String phone, String address) {
+		this.empNo = empNo;
+		this.empName = empName;
+		this.age = age;
+		this.gender = gender;
+		this.phone = phone;
+		this.address = address;
 	}
-
+	
+	
 
 	public Employee(int empNo, String empName, String dept, String job, int age, char gender, int salary,
 			double bonusPoint, String phone, String address) {
@@ -40,6 +43,7 @@ public class Employee {
 		this.phone = phone;
 		this.address = address;
 	}
+
 
 	public int getEmpNo() {
 		return empNo;
