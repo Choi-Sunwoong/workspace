@@ -15,30 +15,46 @@ public class PracticeService {
 		for(int i = 0; i < arr.length; i++){
 			for(int j = 0; j < arr[i].length;j++) {
 				System.out.print("("+i+", "+j+")");
-		
-			
-
-		
 			
 			}
+			System.out.println();
 	
-		}	
+		}
+		
 	}
 
 	public void practice2() {
-		int[][] arr= new int[4][4]
+		int[][] arr= new int[4][4];
 		
-		for(int i= 0; i < arr.length; i++) {
+		int num = 1;
+		
+		
+		for(int i = 0; i < arr.length; i++){
 			for(int j = 0; j < arr[i].length;j++) {
-				System.out.println(arr[i][j]);
-		
-			
+				arr[i][j] = num;
+				System.out.print(arr[i][j]);
+				num++;		
 			}
+			System.out.println();
+		
 		}
-		
-		
-	}
-	
+	}		
+		public void practice3() {
+			int[][] arr= new int[4][4];
+			
+			int num = 1;
+			
+			
+			for(int i = 0; i < arr.length; i++){
+				for(int j = 0; j < arr[i].length;j++) {
+					arr[i][j] = num;
+					System.out.print(arr[i][j]);
+					num++;		
+				}
+				System.out.println();
+			
+			}	
+}	
 	public void practice7() {
 		
 		// 1차원 문자열 배열에 학생 이름 초기화되어 있다.
