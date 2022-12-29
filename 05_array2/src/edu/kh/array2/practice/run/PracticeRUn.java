@@ -6,7 +6,7 @@ public class PracticeRUn {
 
 	public static void main(String[] args) {
 		PracticeService ps = new PracticeService();
-		ps.practice3(); 
+		ps.practice4(); 
 	}
 
 }

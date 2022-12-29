@@ -1,6 +1,7 @@
 package edu.kh.array2.practice.service;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PracticeService {
@@ -32,29 +33,66 @@ public class PracticeService {
 		for(int i = 0; i < arr.length; i++){
 			for(int j = 0; j < arr[i].length;j++) {
 				arr[i][j] = num;
-				System.out.print(arr[i][j]);
+				System.out.printf("%3d",arr[i][j]);
 				num++;		
 			}
 			System.out.println();
 		
 		}
 	}		
-		public void practice3() {
-			int[][] arr= new int[4][4];
+	public void practice3() {
+		int[][] arr= new int[4][4];
 			
-			int num = 1;
+		int num = 16;
 			
 			
-			for(int i = 0; i < arr.length; i++){
-				for(int j = 0; j < arr[i].length;j++) {
-					arr[i][j] = num;
-					System.out.print(arr[i][j]);
-					num++;		
-				}
-				System.out.println();
+		for(int i = arr.length-1; i > -1; i--) {
+			for(int j = arr.length-1; j > -1;j--) {
+				arr[i][j] = num;
+				System.out.printf("%3d",arr[i][j]);
+				num--;
+			}
+			System.out.println();
+		}	
+	}
+	
+	public void practice4() {
+		
+		int[][] arr= new int[4][4];
+		arr[0][0] = 9;
+		arr[0][1] = 3;
+		arr[0][2] = 6;
+		arr[0][3] = arr[0][0]+arr[0][1]+ arr[0][2];
+		arr[1][0] = 3;
+		arr[1][1] = 6;
+		arr[1][2] = 10;
+		arr[1][3] = arr[1][0]+arr[1][1]+ arr[1][2];
+		arr[2][0] = 7;
+		arr[2][1] = 9;
+		arr[2][2] = 10;
+		arr[2][3] = arr[2][0]+ arr[2][1] +arr[2][2];
+		arr[3][0] = arr[0][0] +arr[0][1] +arr[0][2];
+		arr[3][1] = arr[1][0] +arr[1][1] +arr[1][2];
+		arr[3][2] = arr[2][0] +arr[2][1] +arr[2][2];
+		arr[3][3] = arr[0][3] +arr[1][3] +arr[2][3];
 			
+		for(int i = 0; i <= arr.length; i++){
+			for(int j = 0; j < arr[i].length;j++) {
+				int num = 0;
+				System.out.printf("%3d",arr[i][j]);
+				num++;
+			System.out.println();
+		
 			}	
-}	
+		}
+	}	
+	
+	public void practice5() {
+		
+		int[][] arr = new int [sc.nextInt][]
+		
+		
+	}
 	public void practice7() {
 		
 		// 1차원 문자열 배열에 학생 이름 초기화되어 있다.
