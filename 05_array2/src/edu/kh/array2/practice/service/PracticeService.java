@@ -1,7 +1,6 @@
 package edu.kh.array2.practice.service;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class PracticeService {
@@ -76,21 +75,37 @@ public class PracticeService {
 		arr[3][2] = arr[2][0] +arr[2][1] +arr[2][2];
 		arr[3][3] = arr[0][3] +arr[1][3] +arr[2][3];
 			
-		for(int i = 0; i <= arr.length; i++){
+		for(int i = 0; i < arr.length; i++){
 			for(int j = 0; j < arr[i].length;j++) {
-				int num = 0;
 				System.out.printf("%3d",arr[i][j]);
-				num++;
+			}
 			System.out.println();
 		
-			}	
+				
 		}
 	}	
 	
 	public void practice5() {
 		
-		int[][] arr = new int [sc.nextInt][]
-		
+		char[][] arr = new char [10][10];
+		Scanner sc = new Scanner(System.in);
+		System.out.print("행 크기: ");
+		int input1 = sc.nextInt();
+		System.out.print("열 크기: ");
+		int input2 = sc.nextInt();
+		for(int i = 0; i < input1; i++) {
+			for(int j = 0; j < input2; j++) {
+				if(input1 >10 || input2 > 10) {
+					System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+						continue;
+				}
+				
+				arr[i][j] = (char)((Math.random()*26) +65);
+				
+				System.out.print(arr[i][j]+" ");
+			}
+			System.out.println();
+		}
 		
 	}
 	public void practice7() {
@@ -146,17 +161,17 @@ public class PracticeService {
 		
 		System.out.print(input + "에 " + ch + "가 존재하는 위치(인덱스) : ");
 		
-		for(int i = 0; i < arr.length; i++) {
-			if(arr[i] == ch) {
-				System.out.print(i + " ");
-			}
-		}System.out.println();
+		//for(int i = 0; i < arr.length; i++) {
+			//if(arr[i] == ch) {
+			//	System.out.print(i + " ");
+			//}
+		///}System.out.println();
 		
 		for(int i = 0; i < arr.length; i++) {
-			if(arr[i] == ch) {
-				count++;
+		//	if(arr[i] == ch) {
+				//count++;
 			}
-		}System.out.print(ch + " 개수 : " + count);
+		//}System.out.print(ch + " 개수 : " + count);
 		}
 	}
 
