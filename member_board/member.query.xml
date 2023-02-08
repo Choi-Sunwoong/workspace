@@ -5,6 +5,6 @@
 	<comment>member.query.xml file</comment>
 	
 	<!-- 회원기능 -->
-	<entry key = ""></entry>
+	<entry key = "slelctMyInfo"></entry>
 	
 </properties>
