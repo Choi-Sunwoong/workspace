@@ -5,6 +5,9 @@
 	<comment>member.query.xml file</comment>
 	
 	<!-- 회원기능 -->
-	<entry key = "slelctMyInfo"></entry>
+	<entry key = "slelctMyInfo">
+	SELECT * FROM "MEMBER" m 
+	WHERE MEMBER_ID  = ?;
+	</entry>
 	
 </properties>

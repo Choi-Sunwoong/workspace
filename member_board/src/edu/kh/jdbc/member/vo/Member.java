@@ -8,6 +8,8 @@ public class Member {
 	private String memberGender; // 성별
 	private String enrollDate; // 가입일
 	private String secessionFlag; // 탈퇴여부
+	
+	private String newmemberPw;
 
 	public Member() {}
 	
@@ -83,6 +85,11 @@ public class Member {
 	public void setSecessionFlag(String secessionFlag) {
 		this.secessionFlag = secessionFlag;
 	
+	}
+
+	public static Member seleceMemberInfo(String sessionLoginId) {
+		// TODO Auto-generated method stub
+		return seleceMemberInfo(null);
 	}
 
 	

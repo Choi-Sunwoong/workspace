@@ -1,5 +1,9 @@
 package edu.kh.jdbc.member.view;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -83,53 +87,48 @@ public class MemberView {
 	private void selectMyInfo(){
 		System.out.println("[내 정보 조회]");
 		
-		// SERVICE의 회원정보 조회 기능 호출 반환
-		// 정보를 조회할 회원의 아이디를 확인할 방법
-		//1. session
+	
 		String sessionLoginId = (String)MemberService.getAttribute("loginId");//반환시 object 형식이라 String으로 형변환
 		System.out.println("로그인아이디_세션 : " + sessionLoginId);
 		String requestLoginId = MemberService.getParameter("loginId");
 		System.out.println("로그인아이디_리퀘스트 : " + requestLoginId);
 		
 		//
-		Member mInfo = msvc.memberInfo(sessionLoginId); // memberInfo메서드로 받아오는 회원 정보는 여러 정보이므로 memberDto타입 객체로 담음
-		System.out.println(mInfo);
-		//회원정보 출력 페이지 포워딩
-		request.setAttribute("memberInfo", mInfo);//첫번째 매개변수 : 이름 , 두번째 매개변수 : 이름에 저장해줄 값
+		Member mInfo = loginMember.seleceMemberInfo(sessionLoginId); 
 		
-		dispatcher = request.getRequestDispatcher("MemberInfo.jsp");// redirect는 응답과 동시에 데이터가 사라지니까, 데이터가 사라지지 않는 dispatcher를 사용
-		dispatcher.forward(request, response);
+		
+		
 		break;
 	}
-	로그인시 session에 Attribute를 set 했으므로, 회원정보 확인 버튼을 클릭하면 
-	session의 loginId값을 get해 출력하여 제대로 작동 되는지 확인
+	//로그인시 session에 Attribute를 set 했으므로, 회원정보 확인 버튼을 클릭하면 
+	//session의 loginId값을 get해 출력하여 제대로 작동 되는지 확인
 
-	* MemberService의 memberInfo()메서드 *
+	//* MemberService의 memberInfo()메서드 *
 	//회원정보 조회 메소드
-	public MemberDto memberInfo(String sessionLoginId) {
+	public Member memberInfo(String sessionLoginId) {
 		System.out.println("MemberService memberInfo() 호출");
-		MemberDto mInfo = dao.seleceMemberInfo(sessionLoginId);
+		Member mInfo = Member.seleceMemberInfo(sessionLoginId);
 		return mInfo;
 	}
 
-	* MemberDao의 seleceMemberInfo()메서드 *
+	//* MemberDao의 seleceMemberInfo()메서드 *
 	//회원정보 SELECT 메소드
-	public MemberDto seleceMemberInfo(String sessionLoginId) {
+	public Member seleceMemberInfo(String sessionLoginId) {
 		System.out.println("MemberDao selectMemberInfo() 호출");
-		String sql = "SELECT * FROM TEST_MEMBER "
-			+ "WHERE MID = ?";
-		MemberDto mInfo = null;
+		String sql = "SELECT * FROM MEMBER "
+			+"WHERE MEMBER_ID  = ?"; 
+		Member mInfo = null;
 	try {
 		Connection con = getConnection();
 		PreparedStatement pstmt = con.prepareStatement(sql);
 		pstmt.setString(1, sessionLoginId);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
-			mInfo = new MemberDto();
-			mInfo.setMid(rs.getString(1));
-			mInfo.setMpw(rs.getString(2));
-			mInfo.setMname(rs.getString(3));
-			mInfo.setMbrith(rs.getString(4));
+			mInfo = new Member();
+			mInfo.setMemberId(rs.getString(1));
+			mInfo.setMemberPw(rs.getString(2));
+			mInfo.setMemberName(rs.getString(3));
+			mInfo.setMemberGender(rs.getString(4));
 		}
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -146,17 +145,12 @@ public class MemberView {
 		System.out.println("[회원 목록 조회(아이디, 이름, 성별)]");
 				
 		
-		//2) 로그인이 되어있는 경우
-		//		회원정보를 출력할 문자열을 만들어서 반환(return)
-		//		단, 비밀번호는 제외
+		/
 		String str = "이름 :" +loginMember.getMemberName(); // 이름
 		str += "\n아이디 : " +loginMember.getMemberId(); // 아이디
 		str += "\n성별 : " + loginMember.getMemberGender(); // 성별
 				
-		// 이름 : 유저일
-		// 아이디 : user01
-		// 나이 : 50세
-				
+		
 		return str;
 		
 		
@@ -175,7 +169,7 @@ public class MemberView {
 		
 		while(true) {
 		System.out.print("수정할 성별(M/F) : ");
-		memberGender = sc.next().toUpperCase();
+		String memberGender = sc.next().toUpperCase();
 		
 		System.out.println();
 		if(memberGender.equals("M") || memberGender.equals("F")) {
@@ -186,7 +180,7 @@ public class MemberView {
 		
 		System.out.println();
 	}
-		return 0;
+		return 1;
 		
 	}
 	
@@ -197,8 +191,8 @@ public class MemberView {
 			return -1;
 		}	
 		
-		System.out.print("수정할 비밀번호: ");
-		String inputName = sc.next();
+		System.out.print("현재 비밀번호: ");
+		String memberPw = sc.next();
 		
 		while(true) {
 		System.out.print("수정할 성별(M/F) : ");
