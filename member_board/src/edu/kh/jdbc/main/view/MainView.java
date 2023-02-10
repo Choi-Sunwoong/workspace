@@ -21,7 +21,7 @@ public class MainView {
 	
 	
 	// 로그인된 회원 정보를 저장한 객체를 참조하는 참조 변수
-	private static Member LoginMember = null;
+	public Member LoginMember = null;
 	// -> 로그인 X == null
 	// -> 로그인 O != null
 	
@@ -89,7 +89,7 @@ public class MainView {
 						LoginMember = null; // 로그아웃 == loginMember가 참조하는 객체 없음( == null )
 						System.out.println("\n[로그아웃 되었습니다]\n");
 						input = -1; // do-while문이 종료되지 않도록 0이 아닌값으로 변경
-						//break;
+						break;
 					case 99 : System.out.println("프로그램 종료");
 							// System.exit(0); // JVM 종료, 매개변수는 0, 아니면 오류를 의미
 							System.exit(0);
