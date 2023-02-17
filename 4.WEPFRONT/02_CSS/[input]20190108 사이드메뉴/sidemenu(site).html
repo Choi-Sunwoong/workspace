@@ -1,0 +1,108 @@
+<style>
+* {padding:0;margin:0;}
+body {background:#fff;}
+header {width:100%;background:#f5f5f5;position:relative;z-index:10;}
+.header-list {width:1200px;margin:0 auto;font-size:0;padding:15px 0;}
+.header-list > li {font-size:12px;display:inline-block;vertical-align:middle;}
+.header-list > li:nth-child(1) {font-size:20px;width:200px;}
+.header-list > li:nth-child(2) {width:calc(100% - 250px);}
+.header-list > li:nth-child(3) {width:50px;}
+.header-list > li > div {width:auto;}
+
+.menu-ul {font-size:0;}
+.menu-ul > li {font-size:12px;display:inline-block;vertical-align:middle;}
+.menu-ul > li > a {display:block;width:auto;padding:15px;}
+
+input[id="menuicon"] {display:none;}
+input[id="menuicon"] + label {display:block;position:relative;width:100%;height:40px;cursor:pointer;}
+input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:3px;border-radius:30px;background:#666;transition:all .35s;}
+input[id="menuicon"] + label span:nth-child(1) {top:10%;}
+input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+input[id="menuicon"] + label span:nth-child(3) {bottom:10%;}
+input[id="menuicon"]:checked + label {z-index:2;}
+input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+div[class="sidebar"] {width:100%;height:0px;background:#aaa;position:fixed;top:76px;left:0;z-index:1;transition:all .35s;overflow:hidden;}
+input[id="menuicon"]:checked + label + div {height:300px;}
+
+.sitemap-ul {font-size:0;width:1200px;margin:15px auto;text-align:center;}
+.sitemap-ul > li {font-size:12px;display:inline-block;vertical-align:top;width:20%;}
+</style>
+<header>
+	<ul class="header-list">
+		<li><div>SITE LOGO</div></li>
+		<li>
+			<div>
+				<ul class="menu-ul">
+					<li><a href="#">menu01</a></li>
+					<li><a href="#">menu02</a></li>
+					<li><a href="#">menu03</a></li>
+					<li><a href="#">menu04</a></li>
+					<li><a href="#">menu05</a></li>
+					<li><a href="#">menu06</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<div>
+				<input type="checkbox" id="menuicon">
+				<label for="menuicon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<div class="sidebar">
+					<ul class="sitemap-ul">
+						<li><a href="#">sitemap01</a>
+							<ul>
+								<li><a href="#">01-01</a></li>
+								<li><a href="#">01-02</a></li>
+								<li><a href="#">01-03</a></li>
+								<li><a href="#">01-04</a></li>
+								<li><a href="#">01-05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">sitemap02</a>
+							<ul>
+								<li><a href="#">02-01</a></li>
+								<li><a href="#">02-02</a></li>
+								<li><a href="#">02-03</a></li>
+								<li><a href="#">02-04</a></li>
+								<li><a href="#">02-05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">sitemap03</a>
+							<ul>
+								<li><a href="#">03-01</a></li>
+								<li><a href="#">03-02</a></li>
+								<li><a href="#">03-03</a></li>
+								<li><a href="#">03-04</a></li>
+								<li><a href="#">03-05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">sitemap04</a>
+							<ul>
+								<li><a href="#">04-01</a></li>
+								<li><a href="#">04-02</a></li>
+								<li><a href="#">04-03</a></li>
+								<li><a href="#">04-04</a></li>
+								<li><a href="#">04-05</a></li>
+							</ul>
+						</li>
+						<li><a href="#">sitemap05</a>
+							<ul>
+								<li><a href="#">05-01</a></li>
+								<li><a href="#">05-02</a></li>
+								<li><a href="#">05-03</a></li>
+								<li><a href="#">05-04</a></li>
+								<li><a href="#">05-05</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>			
+			</div>
+		</li>
+	</ul>
+</header>
+
