@@ -1,23 +1,31 @@
 package edu.kh.jdbc.member.vo;
 
+// VO(Value Object) : 값을 저장하는 용도의 객체
+// - JDBC에서는 테이블의 한 행의 조회 결과 또는 
+//   삽입, 수정을 위한 데이터를 저장하는 용도의 객체
 public class Member {
-	private int memberNo; // 회원번호
-	private String memberId; // 회원아이디
-	private String memberPw; // 비밀번호
-	private String memberName; // 이름
-	private String memberGender; // 성별
-	private String enrollDate; // 가입일
-	private String secessionFlag; // 탈퇴여부
-
-	public Member() {}
 	
+	private int memberNo;
+	private String memberId;
+	private String memberPw;
+	private String memberName;
+	private String memberGender;
+	private String enrollDate;
+	private String secessionFlag;
+	
+	// 기본 생성자
+	public Member() { }
+
 	public Member(String memberId, String memberPw, String memberName, String memberGender) {
+		super();
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
 		this.memberGender = memberGender;
 	}
 
+	
+	
 	public Member(int memberNo, String memberId, String memberName, String memberGender, String enrollDate) {
 		super();
 		this.memberNo = memberNo;
@@ -25,7 +33,6 @@ public class Member {
 		this.memberName = memberName;
 		this.memberGender = memberGender;
 		this.enrollDate = enrollDate;
-		
 	}
 
 	public int getMemberNo() {
@@ -82,11 +89,9 @@ public class Member {
 
 	public void setSecessionFlag(String secessionFlag) {
 		this.secessionFlag = secessionFlag;
-	
 	}
-
 	
+	
+}
 
-
-}	
 
