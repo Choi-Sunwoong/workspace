@@ -1,17 +1,14 @@
 package edu.kh.jsp.model.vo;
 
 public class Person {
-
-	//필드 
+	
+	// 필드
 	private String name;
 	private int age;
 	private String address;
 	
-	
-	public Person() {
-		// TODO Auto-generated constructor stub
-	}
-
+	// 기본생성자
+	public Person() {}
 
 	public Person(String name, int age, String address) {
 		super();
@@ -20,26 +17,21 @@ public class Person {
 		this.address = address;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public int getAge() {
 		return age;
 	}
 
-
 	public void setAge(int age) {
 		this.age = age;
 	}
-
 
 	public String getAddress() {
 		return address;
@@ -55,7 +47,6 @@ public class Person {
 	public String toString() {
 		return name + " / " + age + " / " + address;
 	}
-	
 	
 	
 	

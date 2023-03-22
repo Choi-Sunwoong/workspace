@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,33 +25,33 @@
     <pre>
     	\${ 세팅한 key 값 }
     	
-    	1) request에 추가 세팅된 값을 얻어올 떄
+    	1) request에 추가 세팅된 값을 얻어올 때
     		별도의 다운 캐스팅 필요 없다!
     		
-    	2) import 구문도 생략
+    	2) import 구문도 생략!
     	
     	3) 객체에 저장된 값을 얻어올 때 getter를 호출하는데
-    		get필드명()이 아닌 필드명만 작성하면 된다!	 
+    		get필드명()이 아닌 필드명만 작성하면 된다!
     </pre>
     
     
     메세지 : ${ message } <br>
     
-    person의 name : ${ preson.name } <br>
-    psrson의 age : ${ person.age } <br>
+    person의 name : ${ person.name } <br>
+    person의 age : ${ person.age } <br>
     person의 address : ${ person.address } <br>
     
     person.toString() : ${ person }
     
     <hr>
     
-   	<h3>EL에서 null과 '비어있다'에 대한 처리 방법</h3>
-   	
-   	<h4>empty : 비어있거나 null인지를 검사하는 연산자</h4>
-   	
-   	<h4>\${ 값 == null } / \${값 eq null } : null 인지 검사하는 방법 </h4>
-   	
-    <h4>\${ 값 != null } / \${값 eq null } : null 이 아닌지 검사하는 방법</h4>
+    <h3>EL에서 null과 '비어있다'에 대한 처리 방법</h3>
+    
+    <h4>empty : 비어있거나 null인지를 검사하는 연산자</h4>
+    
+    <h4>\${ 값 == null } / \${ 값 eq null } : null 인지 검사하는 방법 </h4>
+    
+    <h4>\${ 값 != null } / \${ 값 ne null } : null 이 아닌지 검사하는 방법</h4>
     
     <pre>
     	list2 == null : ${list2 == null}
@@ -78,12 +78,13 @@
     	empty list4 : ${empty list4}
     	
     	list4에 요소가 추가되어 있는가? ${!empty list4}
-    	list4에 요소에 추가되어 있는가? ${not empty list4}
+    	list4에 요소가 추가되어 있는가? ${not empty list4}
     	
-    	list4의 0번째 인덱스에 존재하는 값 : %{ list4[0] }
+    	list4의 0번째 인덱스에 존재하는 값 : ${ list4[0] }
     	
-    	--> EL은 List에 존재하는 요소를 얻어올 떄
+    	--> EL은 List에 존재하는 요소를 얻어올 때
     		배열처럼 [index번호] 를 입력해서 얻어온다.
     </pre>
+    
 </body>
 </html>
