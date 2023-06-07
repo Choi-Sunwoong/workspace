@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/테스트.css">
+</head>
+<body>
+  <form name=form method="post" onsubmit="return checkAll()">
+    <table width=750 border="1px" align=center>
+      <tr>
+        <th colspan="2" bgcolor="#E4F7BA" >회원 기본 정보</th>
+      </tr>
+      <tr>
+        <td>아이디</td>
+        <td><input type="text" name="userId"> 4~12자의 영문 대소문자와 숫자로만 입력</td>
+      </tr>
+      <tr>
+        <td>비밀번호</td>
+        <td><input type="password" name="password1"> 4~12자의 영문 대소문자와 숫자로만 입력</td>
+      </tr>
+      <tr>
+        <td>비밀번호 확인</td>
+        <td><input type="password" name="password2"></td>
+      </tr>
+      <tr>
+        <td>메일주소</td>
+        <td><input type="text" name="mail"> 예)id@domain.com</td>
+      </tr>
+      <tr>
+        <td>이름</td>
+        <td><input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <td>주민등록번호</td>
+        <td>
+            <input type="text" name="identi1" style="width:70px">
+            -
+            <input type="password" name="identi2" style="width:70px">
+            </td>
+      </tr>
+      <tr>
+        <td>관심분야</td>
+        <td>
+          <input type="checkbox" name="favorite" value="컴퓨터">컴퓨터
+          <input type="checkbox" name="favorite" value="인터넷">인터넷
+          <input type="checkbox" name="favorite" value="여행">여행
+          <input type="checkbox" name="favorite" value="영화감상">영화감상
+          <input type="checkbox" name="favorite" value="음악감상">음악감상
+        </td>
+      </tr>
+      <tr>
+        <td>자기소개</td>
+        <td><textarea name="introduceMyself" id=intro name=intro cols=50 rows=10></textarea>
+          </td>
+      </tr>
+    </table>
+    <p align=center>
+      <input type="submit" name="join" value="회원 가입">
+      <input type="reset" name="reset" value="다시 입력">
+    </p>
+  </form>
+  </body>
+<script src="/테스트.js"></script>
+</html>

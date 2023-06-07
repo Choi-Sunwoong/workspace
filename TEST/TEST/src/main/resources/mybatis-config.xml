@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<typeAliases>com.kh.myBatis.member.model.vo.Member
+com.kh.myBatis.board.model.vo.Board
+com.kh.myBatis.board.model.vo.SearchCondition
+</typeAliases>
+
+

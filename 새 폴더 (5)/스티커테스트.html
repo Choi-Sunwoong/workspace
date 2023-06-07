@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.sticky-note {
+    position: absolute;
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-note textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    font-size: 16px;
+}
+
+.sticky-note-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="sticky-note" id="stickyNote">
+    <textarea placeholder="메모를 입력하세요"></textarea>
+    <span class="sticky-note-close" onclick="closeStickyNote()">&times;</span>
+</div>
+
+<button onclick="createStickyNote()">스티커 메모지 만들기</button>
+
+<script>
+function createStickyNote() {
+    var stickyNote = document.createElement("div");
+    stickyNote.classList.add("sticky-note");
+    stickyNote.innerHTML = `
+        <textarea placeholder="메모를 입력하세요"></textarea>
+        <span class="sticky-note-close" onclick="closeStickyNote()">&times;</span>
+    `;
+    document.body.appendChild(stickyNote);
+}
+
+function closeStickyNote() {
+    var stickyNotes = document.getElementsByClassName("sticky-note");
+    if (stickyNotes.length > 0) {
+        var lastStickyNote = stickyNotes[stickyNotes.length - 1];
+        lastStickyNote.remove();
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "liveSassCompile.settings.rootIsWorkspace": null,
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.includeItems": ["/css/scss/ *.scss"],
+  "liveServer.settings.port": 5502
+}

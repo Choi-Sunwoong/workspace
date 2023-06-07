@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <body>
+    <!-- 
+        1. button을 만들고 이미지를 불러온다.
+        2. javascipt를 실행할 수 있도록 버튼에 onclick 속성을 넣어 준다.
+        3. 실행한 javascript img에서 출력할 수 있도록한다.
+     -->
+        <button onclick="moveRight();" >오른쪽</button>
+        <button onclick="moveLeft();" >왼쪽</button>
+        <button onclick="moveUp();" >위</button>
+        <button onclick="moveDown();" >아래</button>
+        <button onclick="turn();" >회전</button>
+        <button onclick="reset();" >리셋</button>
+        <br/>
+        <img src="./images/kim1.png" id="gura">
+        <script>
+            // 문제1
+            /*
+                1. img를 옮기기 위해서는 margin에 값을 늘려주는 것이 좋다.
+                    (padding의 값을 늘려주는 것은 입고 있는 옷의 크기를 늘리는 것과 비슷함으로 별로 좋지 않음)
+                2. HTML 문서 객체에 inline으로 style을 입력하는 방법
+                    style.css속성
+                    css 속성 작성시에는 camelCase방법으로 작성해준다.
+            */
+    
+            /*
+                1. img#gura에 style 속성과 값을 주는 코드를 작성한다.
+                2. button을 클릭할때마다 margin값을 추가해야 하므로
+                   산술연산자 필요.
+            */
+            var rightLeft=0;
+    
+            var moveRight=function(){
+                rightLeft=rightLeft+100;
+                document.querySelector("#gura").style.marginLeft=rightLeft+"px";
+            };
+    
+    
+            var moveLeft=function(){
+                rightLeft=rightLeft-100;
+                document.querySelector("#gura").style.marginLeft=rightLeft+"px";
+            };
+    
+            var upDown=0;
+    
+            var moveUp=function(){
+                upDown=upDown-100;
+                document.querySelector("#gura").style.marginTop=upDown+"px";
+            };
+    
+            var moveDown=function(){
+                upDown=upDown+100;
+                document.querySelector("#gura").style.marginTop=upDown+"px";
+            };
+    
+    
+            //문제2
+            var imgDegree=0;
+    
+            var turn=function(){
+                imgDegree=imgDegree+10;
+                document.querySelector("#gura").style.transform="rotate("+imgDegree+"deg)";
+            };
+    
+            //문제3 리셋하기
+            //풀어봐야함.
+        </script>
+    </body>
+    
+</body>
+</html>

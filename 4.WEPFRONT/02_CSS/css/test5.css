@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    border: 1px solid black;
+}
+.header {
+    border: 1px solid black;
+    height: 10vh;
+    width: 100%;
+}
+
+.nav {
+    border: 1px solid black;
+    height: 10vh;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height:100vh;
+}
+
+
+
+.mainleft{
+   border: 1px solid black;
+    flex-basis: 10%;
+}
+
+.maincenter {
+    border: 1px solid black;
+    flex-basis: 80%;
+}
+
+.mainright {
+    border: 1px solid black;
+    flex-basis: 10%;
+}
+
+.putter {
+    border: 1px solid black;
+    height: 10vh;
+}

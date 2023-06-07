@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+section{
+    background-color: white;
+    background-image: url(images/백그라운드\ 디자인\ 요소.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1000px;
+}
+
+.term { 
+    font-size: 4em; 
+    color: #F9BE28;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color:#F9BE28;
+    text-decoration-thickness: 2px;
+    text-underline-offset : 20px;
+    flex-basis: 10%;   
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.background-img {
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+    background-image: url('백그라운드 디자인 요소.jpg');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.answer {
+display: none;
+padding-bottom: 30px;
+text-align: left;
+margin-left: 27%;
+margin-right: 25%;
+}
+
+
+#faq-title {
+    font-size: 25px;
+    color: #F9BE28;
+    font-size: 4em; 
+    text-decoration-line: underline;
+    text-decoration-color:#F9BE28;
+    text-decoration-thickness: 2px;
+    text-underline-offset : 20px;
+    flex-basis: 10%;   
+    height: 20%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top:5%;
+
+}
+
+.multi-accordion {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: .5em .5em 0;
+    overflow: hidden;
+}
+.multi-accordion summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    cursor: pointer;
+    z-index: 1;
+}
+.multi-accordion details:first-child summary{
+    border-radius: 10px 10px 0 0;
+}
+.multi-accordion details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+    background-color: #fff0c0;
+}
+.multi-accordion details:not(:first-child)[open] summary {
+    margin-top: .15em;
+    border-top: 1px solid #aaa;
+}
+.multi-accordion details[open] + details > summary {
+    border-top: 1px solid #aaa;
+}
+summary::marker{
+    content: "+ ";
+    font-family: monospace;
+}
+details[open] summary::marker {
+    content: "- ";
+}
+
+p {
+    z-index: 5;
+    width: 500ox;
+}

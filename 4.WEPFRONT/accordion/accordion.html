@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언UI</title>
+    <link rel="stylesheet" href="./accordion.css">
+    <script type="text/javascript" src="accordion.js"></script>
+</head>
+<body>
+      <div class="multi-accordion">
+        <details>
+            <summary>기본 구조</summary>
+            <p id="p1">아코디언UI는 접었다 펴쳐지는 1개의 토글 아이템을 여러 개 나열한 것입니다.
+                접었다 펼쳐지는 아이템 1개를 만들 수 있으면 되는 단순한 구조로 되어 있습니다.
+                아코디언UI 아이템 1개는 아이템을 감싸는 &lt;details&gt; 태그 1개와 대표로 표시하는 키워드(제목)을 위한 &lt;summary&gt;태그 1개로 구성됩니다.
+                &lt;details&gt; 태그는 &lt;summary&gt; 태그를 품고 있으며, &lt;summary&gt; 태그는 반드시 &lt;details&gt; 태그 바로 밑의 자식 요소로 위치해야 합니다.
+                손자 위치가 되면 키워드의 기능을 상실하고 일반 태그로 인식합니다.</p>
+        </details>
+        <details>
+            <summary id="s1">마커(불릿) 변경</summary>
+            <p id="p2">아코디언UI 아이템 앞에 자동으로 붙는 화살표 마커는 가상 요소로 구현한 디자인입니다.
+                개발자도구로 확인하면 다음처럼 마커 가상 요소가 &lt;summary&gt; 태그에 자동으로 붙는 것을 볼 수 있습니다.
+                마커 가상 요소로 붙었다는 것은 &lt;summary&gt; 태그에 마커 가상 요소를 재정의해서 다른 마커로 변경할 수 있다는 뜻입니다.</p>
+        </details>
+        <details>
+            <summary>자바스크립트 제어</summary>
+            <p><pre>
+    window.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('details').forEach(function(item){
+            item.addEventListener("toggle", event => {
+            let toggled = event.target;
+            if (toggled.attributes.open) {
+                /* 나머지 닫음 */
+                document.querySelectorAll('details[open]').forEach(function(opened){
+                    if(toggled != opened)
+                    opened.removeAttribute('open');
+                });
+            }
+            })
+        });
+    });
+            </pre></p>
+        </details>
+      </div>
+</body>
+</html>

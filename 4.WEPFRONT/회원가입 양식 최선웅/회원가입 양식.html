@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 양식</title>
+</head>
+<body>
+    <form action="main.html" method="get">
+        <fieldset>
+            <legend>회원 가입 양식</legend>
+            <table>
+                <tr>
+                   <th>아이디</th>
+             <td><input type="text" name="uid" id="uid" onkeydown="joinform_check()">
+            </td>
+             <td>
+                <button id="btnid">중복확인</button>
+            </td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td colspan="2">
+                <input type="password" name="pw" id="pw" onkeydown="joinform_check()">
+                <span id="resulpw" class="confirm"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <th>비밀번호 확인</th>
+            <td colspan="2">
+                <input type="password" name="pw2" id="pw2" >
+                <span id="resultpw2" class="confirm"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <th>이름</th>
+            <td>
+                <input type="text" name="uname" id="uname"onkeydown="joinform_check()">
+                <span id="resultname" class="confirm"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <th>성별</th>
+            <td> <label for="man">남</label> 
+                <input type="radio" name="human" id="man" value="A">    
+                
+                <label for="women">여</label> 
+                <input type="radio" name="human" id="women"  value="B"> 
+            </td>
+        </tr>
+
+        <tr>
+            <th>전화번호</th>
+            <td>
+                <input type="tel" name="phone" id="phone">
+                <span id="resultphone" class="confirm"></span>
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>이메일</th>
+            <td>
+                <input type="email" name="emil_id" id="email_id">
+                <span id="resultemail" class="confirm"></span>
+            </td>
+        </tr>
+            </table>
+
+            <button>초기화</button> 
+            <button>회원가입</button>
+        </fieldset>
+
+
+
+    </form>
+     <script src="/회원가입 최선웅/회원가입 양식.js"></script> 
+</body>
+</html>

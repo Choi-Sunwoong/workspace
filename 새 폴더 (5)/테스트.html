@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav .addbtn {
+    position: absolute;
+    top: 0;
+    right: 90px;
+    font-size: 24px;
+    margin-left: 50px;
+    color: #00ff00;
+    cursor: pointer;
+}
+
+.sidenav .removebtn {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    font-size: 24px;
+    margin-left: 50px;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">소개</a>
+  <a href="#">서비스</a>
+  <a href="#">고객</a>
+  <a href="#">연락처</a>
+  <span class="addbtn" onclick="addPage()">페이지 추가</span>
+</div>
+
+<h2>애니메이션 사이드내비게이션 예제</h2>
+<p>아래 요소를 클릭하여 사이드 내비게이션 메뉴를 열어보세요.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; 열기</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function addPage() {
+    var pageName = prompt("추가할 페이지의 이름을 입력하세요.");
+    if (pageName) {
+        var pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = pageName;
+        document.getElementById("mySidenav").appendChild(pageLink);
+        addRemoveButton(pageLink);
+    }
+}
+
+function addRemoveButton(page) {
+    var removeButton = document.createElement("span");
+    removeButton.className = "removebtn";
+    removeButton.textContent = "×";
+    removeButton.addEventListener("click", function() {
+        page.remove();
+    });
+    page.appendChild(removeButton);
+}
+</script>
+
+</body>
+</html>

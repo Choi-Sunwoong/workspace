@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<select id = "selectSearchLis" resultMap="boardResultSet">
+SELECT BOARD_NO, BOARD_TITLE, USER_ID, COUNT, CREATE_DATE
+FROM BOARD B
+JOIN MEMBER ON(BOARD_WRITER=USER_NO) 
+<trim prefix="WHERE" prefixOverrides="AND/OR">
+
+
+  <choose>
+    <when test = "ID != null" >
+         AND ID like #{writer} 
+    </when>
+    
+    <when test="TITLE != null">
+      AND TITLE like #{title}
+    </when>
+    
+    <when test="CONTENT != null">
+       AND CONTENT like #{content}
+  </choose>​
+
+
+</trim>
+
+
+
+</select>

@@ -1,0 +1,360 @@
+
+
+#title{
+ font-size: 25px;
+  margin: 20px 0px;
+  font-weight: 900;
+  width: 1200px;
+}
+
+
+#top{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    width:55%;
+    min-width:800px;
+    margin:20px;
+}
+
+#range{
+    display: flex;
+
+}
+.oldBtn{
+    margin-left: 10px;
+    background : none;
+    border: 0;
+    font-weight: bold;
+    color: #A4A4A4;
+}
+.newBtn{
+    background : none;
+    border: 0;
+    font-weight: bold;
+    color: #A4A4A4;
+}
+#search-form{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    border-color:red;
+   
+}
+#keyword{
+    display: flex;
+    width: 180px;
+    height: 30px;
+   
+}
+
+.search-icon{
+    width: 30px;
+    margin-right: 10px;
+   
+}
+#memo-btn{
+    display: flex;
+    background-color:RGB(143, 122, 229);
+    color: white;
+    border: white;
+    border-radius: 5px;
+    margin-left:5px;
+    align-items: center;
+}
+.memocon{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width:77%;
+    
+}
+
+#memo{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+	max-width:810px;
+	min-width:810px;
+}
+
+#content{
+    display: flex; 
+    justify-content: flex-start;
+    align-items: baseline;
+     font-size: 14px;
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+}
+#profile{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.memo-yellow{
+    display: flex;
+    background-color: #FEE182;
+    width:250px;
+    height:200px;
+    margin-bottom: 50px;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: flex-end;
+   padding: 10px 10px 10px 10px;
+   margin: 10px;
+}
+
+#memo-pink{
+    display: flex;
+    background-color: #f8d7da;
+    width:250px;
+    height:200px;
+    margin-bottom: 50px;
+   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   justify-content: flex-end;
+   align-items: flex-end;
+   padding: 10px 10px 10px 10px;
+}
+#memo-green{
+    display: flex;
+    background-color: #d4edda;
+    width:250px;
+    height:200px;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    justify-content: flex-end;
+   align-items: flex-end;
+   padding: 10px 10px 10px 10px;
+}
+#memo-blue{
+    display: flex;
+    background-color: #d1ecf1;
+    width:250px;
+    height:200px;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    justify-content: flex-end;
+   align-items: flex-end;
+   padding: 10px 10px 10px 10px;
+}
+#memo-gray{
+    display: flex;
+    background-color: #dddddd;
+    width:250px;
+    height:200px;
+    margin-bottom: 50px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    justify-content: flex-end;
+   align-items: flex-end;
+   padding: 10px 10px 10px 10px;
+}
+
+
+#modal{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+#text{
+    display: flex;
+    position:relative;
+    width: 97%; 
+    height:78%;
+    padding: 10px 30px 10px 30px;
+    justify-content:flex-start;
+    
+    
+}
+
+.modify-text {
+	overflow: auto;
+}
+
+
+#write-memo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: #FEE182;
+    width:370px;
+    height:370px;
+    border-color: rgba(255, 255, 255, 0.5);
+    flex-direction:column;
+    position:absolute;
+    top:277px;
+}
+#close{
+	width : 97%;
+    display: flex;  
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    justify-content: flex-end;
+}
+#editor{
+    display: flex;
+    width: 370px;
+    justify-content: space-around;
+    align-items: center;
+    top: 580px;
+    padding-bottom: 10px;
+}
+
+#editor>div{
+	cursor:pointer;
+}
+#modify{
+    display: inline-flex;
+    position: relative;
+    
+    font-size: 22px;
+}
+
+#trash{
+    display: inline-flex;
+    position: relative;
+    font-size: 22px;
+}
+
+#back-color{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+
+#font{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+#italic{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+#under{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+#line{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+.save ,.modify-save{
+    display: inline-block;
+    position:relative;
+    font-size: 30px;
+}
+
+
+.modal-yellow{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+.memocloser{
+			didplay:flex;
+			justify-content:flex-end;
+			width: 100%;
+    		
+		}   
+	
+#memocolor{
+    background-color: #fff;
+    width:370px;
+    height:70px;
+}   
+
+.yellow, .pink, .green, .blue, .black{
+    width:20%;
+    height:100%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+#write-memo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: #FEE182;
+    width:370px;
+    height:370px;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+#modify{
+    display: inline-flex;
+    position: relative;
+    
+    font-size: 30px;
+}
+
+#trash{
+    display: inline-flex;
+    position: relative;
+    font-size: 30px;
+}
+
+#back-color{
+    display: inline-block;
+    position:relative;
+    font-size: 22px;
+}
+
+
+.save,.modify-save{
+    display: inline-block;
+    position:relative;
+    font-size: 30px;
+}
+
+
+.modal-yellow{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+#rightzone{
+	display:flex;
+	justify-content:space-between;
+	width:303px;
+	margin-right:10px;
+}
+

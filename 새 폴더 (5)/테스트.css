@@ -1,0 +1,26 @@
+#sidebar {
+  width: 200px;
+  float: left;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+#sidebar h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 10px 0;
+}
+
+#sidebar a {
+  color: #000;
+  text-decoration: none;
+}

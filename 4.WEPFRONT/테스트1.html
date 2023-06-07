@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- font awesome 이라는 자바스크립트 라이브러리 활요하여 아이콘 사용을 할 수 있습니다.
+        아이콘을 이미지가 아닌 글꼴 처럼 다룰수 있습니다. -->
+   <script src="https://kit.fontawesome.com/8c0ac4dbcb.js" crossorigin="anonymous"></script>
+   <style>
+       @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+       *{  /* 모든 요소 */
+           font-family: 'Gamja Flower', cursive;
+       }
+       table{
+           border-top: 3px solid gray;
+           border-bottom: 3px solid gray;
+       }
+       
+       td{
+           padding: 10px;
+           /* border: 1px dashed gray; */   /* 완성하면 지우세요. 가이드선. */
+       }
+       input,select{
+           padding: 6px;
+           border-radius: 4px;
+           border: 2px solid #ccc;
+       }
+       input[type=text],input[type=password],input[type=email]{
+           width: 70%;    /* 부모 태그 td너비의 70% */
+       }
+       input[type=number]{
+           width: 20%;
+       }
+
+       label.title{
+           display: inline-block;  /* label 태그에는 너비가 적용안됩니다.(block요소가 아님)-> 너비가 적용되도록 합니다. */
+           padding: 10px;
+           width: 70%;
+           background-color: #c69 ;
+           border-radius: 4px;
+           text-align: center;
+           color:white;
+       }
+       button{
+           padding: 7px 15px;
+           margin: 7px;
+           background-color: rgb(194, 14, 104);
+           border: none;
+           color: white;
+           font-size: 1.1em;
+           cursor: pointer;
+           border-radius: 4px;
+       }
+       /* 선택자 : 마우스가 놓여질때 변경될 css */
+       button:hover{
+           background-color: rgb(75, 2, 39);
+       }
+
+   </style>
+
+</head>
+<body>
+<div style="width:70%;margin:auto;"><!-- table 을 포함하는 박스 -->
+<h3 style="text-align: center;">회원등록 
+   <i class="fa-solid fa-camera-retro" style="color:blueviolet;font-size: 1.5em;"></i></h3>    
+<form action=""> 
+   <table  style="width: 100%;">  <!-- 부모태그 div 너비의 100% -->
+       <tr>   
+           <td>
+               <label for="name" class="title">이름</label>
+           </td>
+           <td><input type="text" id="name" name="name"></td>
+       </tr>
+       <tr>
+           <td><label for="password" class="title" >패스워드</label></td>
+           <td><input type="password" id="password" name="password"></td>
+       </tr> 
+       <tr>
+           <td><label for="email" class="title">이메일</label></td>
+           <td><input type="email" id="email" name="email"></td>
+       </tr> 
+       <tr>
+           <td><label for="age" class="title">나이</label></td>
+           <td><input type="number" value="30" id="age" name="age"></td>
+           <!-- min,max 설정 삭제 후 함수로 체크합니다. -->
+       </tr>
+       <tr>
+           <td><label for="addr" class="title">주소</label></td>
+           <td>
+                <select name="addr" id="addr">
+                      <option value="서울">서울</option> 
+                      <option value="인천">인천</option> 
+                      <option value="대전" selected="selected">대전</option> <!-- 초기 선택 설정 -->
+                      <option value="광주">광주</option> 
+                      <option value="부산">부산</option> 
+                </select>   
+           </td>
+       </tr>
+       <tr>
+           <td><label for="" class="title">성별</label></td>
+           <td> 
+               <input type="radio" name="gender" checked="checked" id="male" value="male">
+               <label for="male">남자</label>
+               <input type="radio" name="gender" id="female" value="female">
+               <label for="female">여자</label>
+           </td>
+       </tr>
+       <tr>
+           <td><label for="" class="title">취미</label></td>
+           <td>
+               <input type="checkbox" id="hobby1" name="hobby" value="축구">
+               <label for="hobby1">축구</label>
+               <input type="checkbox" id="hobby2" name="hobby" value="농구">
+               <label for="hobby2">농구</label>
+               <input type="checkbox" id="hobby3" name="hobby" value="스키">
+               <label for="hobby3">스키</label>
+               <input type="checkbox" id="hobby4" name="hobby" value="달리기">
+               <label for="hobby4">달리기</label>
+           </td>
+       </tr>
+       <tr>
+           <td colspan="2" style="text-align: center;">  <!-- 이 td의 내용은 가운데 정렬합니다. -->  
+               <!-- <input type="submit" value="가입하기1"> -->
+               <button type="submit">가입하기</button>
+               <!-- <input type="reset" value="다시쓰기1"> --> <!-- 입력요소의 내용이 초기화 됩니다. -->
+               <button type="reset">다시쓰기</button>
+       <!-- button 태그를 사용하면 기본이 submit : 
+            버튼을 누르면 함수실행하고 기존데이터 지워짐, type="button" 으로 해야 submit 안합니다.-->
+            <button onclick="valid_check()" type="button">유효성검사</button> <!-- 데이터의 효용성이 있는지 검사 -->
+       <!-- 함수만 실행하고 기존데이터 남아 있습니다. -->
+       <!-- <input type="button" onclick="valid_check()" value="유효성검사"> -->
+           </td>
+       </tr>
+
+   </table>
+</form>
+</div>
+<script>
+   function valid_check() {
+       /* 필수입력 이름,이메일로 합니다. */
+       const frm = document.forms[0];
+       const name_= frm.name;  /* name 속성 확인!! */
+       const email_ = frm.email;    
+       const password_= frm.password;
+       let isValid=true;
+       const temp = email_.value;      //자주 사용될 것은 변수로 저장.
+       if(name_.value == "") {
+           alert('이름 입력은 필수입니다.')
+           name_.focus();
+           isValid=false;   /* 적절하지 못한값에 대한 표시 */
+       } else  
+        /* 패스워드 길이 검사 : 패스워드 길이는 6글자 이상 */
+        if(password_.value.length < 6) {
+           alert('패스워드는 6글자 이상입니다.')
+           password_.focus();      //포커스(커서) 이동하기
+           isValid=false;
+       } else 
+       if(email_.value=="") {
+           alert('이메일 입력은 필수 입니다.')
+           email_.focus();
+           isValid=false;
+           
+       } else
+       if(!(temp.endsWith('.net') || temp.endsWith('.com')) || temp.indexOf('@') <= 0) {               
+          //아래 1)과 2)를 동시에 만족하는 경우가 통과이므로 그 반대로 조건식 작성하세요.
+          alert('이메일 형식이 잘못되었습니다.')
+          email_.focus();
+          isValid=false;
+      } 
+      
+       /* 이메일 검사 : 1) .net 또는 .com으로 끝나야한다. 
+       //    2) @를 포함해야한다.단, 문자위치 2번째 이후에  (논리연산: && ,|| , !)*/
+       
+      // temp.endsWith('.net')  , temp.endsWith('.com') , temp.indexOf('@')==-1 (찾는 문자열 없을때 -1)
+      // 참고 : a && b 의 반대 조건식은 !a || !b   , a || b의 반대 조건식은 !a && !b 
+      // 예시 : 1)과 2)를 동시에 만족하는 조건식
+      //       (temp.endsWith('.net') || temp.endsWith('.com')) && temp.indexOf('@') > 0
+      //실제 이메일 주소 형식을 검사하는 것은 복잡한 조건이며 이것은 '정규식'이라는 것으로 검사합니다.
+      //각자 해보세요. : @ 가 2개인지 검사하기. 첫번째 @ 이후로 문자열을 추출해서 그 중에 @ 이 있으면 안됩니다.
+
+
+      /* 나이가 20세 미만이면 alert 으로 청소년이라고 메시지 출력.(단, isValid는 변경안함)*/
+      if(frm.age.value < 20) {
+          alert('청소년 입니다.');
+      }
+
+      /* 취미를 1개 이상 꼭 선택하도록 합니다. :  취미 체크박스의 name이 동일한값 hobby -> 배열로 처리됩니다.*/
+      let cnt=0;
+      frm.hobby.forEach(element => {       //element는 name이 hobby인 input 요소 입니다.
+          //alert(`배열요소 ${element.value} : ${element.checked}`)
+          if(element.checked) cnt++;
+      });
+
+      if(cnt ==0) {
+          alert('취미를 1개 이상 선택해 주세요.')
+          isValid=false;
+      }
+
+       if(isValid) {
+           alert('유효성 검사 통과!!')
+           frm.action = '4_success.html';   //유효성 통과완료되면 서버로 데이터 전달하기.
+                       //처리할 서버의 url(action값)을 아직 몰라요. 그래서 success.html로 이동합니다.
+           frm.submit() ;          // 서버로 데이터 전달하기 동작                                     
+       }else 
+           alert('유효성 검사 실패!!')            
+   }
+
+</script>
+</body>
+</html>
+ 
+` ` `
+ 
+ 
